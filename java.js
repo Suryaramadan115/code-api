@@ -20,42 +20,55 @@ $.ajax({
    
    });
    
+
+function search(){
+    $.ajax({
+        url:' http://www.omdbapi.com',
+        type : 'get',
+        dataType:'json',
+        data :{
+            'apikey':'4066cb5d',
+            's' : $('#search-input').val()
+        },
+        
+        success: function(hasil){
+        if(hasil.Response == "True"){
+        let movie = hasil.Search;
+        
+       
+        $.each(movie,function(i,data){
+        $('.container').html('<div class="con-content"><div class="gambar"><img src="'+data.Poster+'"></div><div class="content"><p><span class="nama">'+ data.Title+'</span></p><p><span class="title"></span></p><p> <span class="harga">'+data.Year+'</span></p></div>')
+        
+        
+        
+        
+        
+        
+        })
+        
+     
+        
+        
+        } 
+     
+     
+        
+        }
+        
+        });
+}
    
    $('#search-btn').on('click',function(){
-   
-   $.ajax({
-   url:' http://www.omdbapi.com',
-   type : 'get',
-   dataType:'json',
-   data :{
-       'apikey':'4066cb5d',
-       's' : $('#search-input').val()
-   },
-   
-   success: function(hasil){
-   if(hasil.Response == "True"){
-   let movie = hasil.Search;
-   
-  
-   $.each(movie,function(i,data){
-   $('.container').html('<div class="con-content"><div class="gambar"><img src="'+data.Poster+'"></div><div class="content"><p><span class="nama">'+ data.Title+'</span></p><p><span class="title"></span></p><p> <span class="harga">'+data.Year+'</span></p></div>')
-   
-   
-   
-   
-   
-   
-   })
+    search();
    
 
-   
-   
-   } 
-
-
-   
-   }
-   
-   });
    });
    
+   $('#search-input').on('keyup',function(e){
+
+if(e.keyCode === 13){
+    search();
+}
+
+
+   });
