@@ -38,7 +38,7 @@ $.ajax({
    
   
    $.each(movie,function(i,data){
-   $('.container').html('<div class="con-content"><div class="gambar"><img src="'+data.Poster+'"></div><div class="content"><p><span class="nama">'+ data.Title+'</span></p><p><span class="title"></span></p><p> <span class="harga">RP '+data.Year+'</span></p></div>')
+   $('.container').html('<div class="con-content"><div class="gambar"><img src="'+data.Poster+'"></div><div class="content"><p><span class="nama">'+ data.Title+'</span></p><p><span class="title"></span></p><p> <span class="harga">'+data.Year+'</span></p></div>')
    
    
    
