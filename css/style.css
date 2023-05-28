@@ -116,30 +116,52 @@ img{width: 100%;}
     position: absolute;
     top: 20px;
     left : 430px;
-    background-color: aqua;
-    border-radius: 30px;
+    
+    border-radius: 5px;
     display: none;
+
+
     
 }
 
 .satu {
 
 grid-area: "satu";
-background-color: blue;
+display: grid;
+background-color: wheat;
+font-size: 20px;
+font-family: 'Times New Roman', Times, serif;
+place-content: center;
+border-radius: 20px;
+border: 2px solid black;
 
 
 }
 .dua{
 
 grid-area:"dua";
-background-color: red;
 height: 400px;
+display:grid;
+place-content: space-between start;
+font-size: 26px;;
+background-color: wheat;
+padding-left: 15px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+border-radius: 10px;
+border-left: 2px solid black;
 
 
 }
 .tiga{
     grid-area: "tiga";
-    background-color: cadetblue;
+    background-color: white;
+    border: 2px solid black;
+    display: grid;
+    height: 200px;
+    display: grid;
+    place-content: center;
+    border-radius: 15px;
+
     
 }
 
@@ -151,8 +173,11 @@ font-size: 40px;
 
 border-radius: 2px;
 position: absolute;
-top: 0;
-right: -200px;
+top: 1px;
+right: -199px;
+width: 50px;
+text-align: center;
+border-radius: 6px;
 
 }
 .close:active{
@@ -160,7 +185,7 @@ right: -200px;
     
 }
 .close:hover{
-    background-color: brown;
+    background-color: grey;
     cursor: pointer;
 }
 
@@ -181,4 +206,11 @@ right: -200px;
 
    .nav a{
     color: white;
+   }
+
+   .tiga img{
+    width: 180px;
+    height: 200px;
+    border-radius: 10px;
+    border-left:px solid black ;
    }
