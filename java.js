@@ -6,7 +6,7 @@ $.ajax({
    let card = '';
    
    movie.forEach(m=> {
-       card += `<div class="con-content"><div class="gambar"><img src="${m.Poster}"></div><div class="content"><p><span class="nama">${m.Title}</span></p><p><span class="title> ${m.Year}</span></p><p> <span class="harga">${m.imdbID}</span></p></div></div>`;
+       card += `<div class="con-content"><div class="gambar"><img src="${m.Poster}"></div><div class="content"><p><span class="nama">${m.Title}</span></p><p><span class="title> ${m.Year}</span></p><p> <span class="harga"></span></p></div></div>`;
        
    });
    
@@ -35,9 +35,9 @@ function search(){
         if(hasil.Response == "True"){
         let movie = hasil.Search;
         
-       
+       $('.container').html('')
         $.each(movie,function(i,data){
-        $('.container').html('<div class="con-content"><div class="gambar"><img src="'+data.Poster+'"></div><div class="content"><p><span class="nama">'+ data.Title+'</span></p><p><span class="title"></span></p><p> <span class="harga">'+data.Year+'</span></p></div>')
+        $('.container').html('<div class="con-content"><div class="gambar"><img src="'+data.Poster+'"></div><div class="content"><p><span class="nama">'+ data.Title+'</span></p><p><span class="title"></span></p><p> <span class="harga">'+data.Year+'</span></p><p><a href="#" class="modd">detail</a></p></div>')
         
         
         
@@ -45,11 +45,15 @@ function search(){
         
         
         })
+        $('#search-input').val('')
         
      
         
         
-        } 
+        }
+
+
+        
      
      
         
@@ -72,3 +76,27 @@ if(e.keyCode === 13){
 
 
    });
+
+let conmodal = document.querySelector('.con-modal');
+let container =document.querySelector('.container');
+let close =document.querySelector('.close')
+let content =document.querySelector('.content')
+
+
+conmodal.addEventListener('click', function(e){
+
+if(e.target.className =="close")
+e.target.parentElement.style.display ="none";
+
+
+})
+
+container.addEventListener('click', function(e){
+if(e.target.className=="modd")
+conmodal.style.display="grid";
+
+
+
+
+
+})

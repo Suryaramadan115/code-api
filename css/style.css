@@ -99,4 +99,86 @@ img{width: 100%;}
 .con-content:hover{
     cursor: pointer;
 
+
 }
+
+.con-modal{
+
+
+    width: 400px;
+    height: 200px;
+    display: grid;
+    grid-template-areas: "satu dua"
+                         "tiga dua";
+    grid-template-columns: 200px 400px;
+    grid-template-rows: 200px 200px ; 
+
+    position: absolute;
+    top: 20px;
+    left : 430px;
+    background-color: aqua;
+    border-radius: 30px;
+    display: none;
+    
+}
+
+.satu {
+
+grid-area: "satu";
+background-color: blue;
+
+
+}
+.dua{
+
+grid-area:"dua";
+background-color: red;
+height: 400px;
+
+
+}
+.tiga{
+    grid-area: "tiga";
+    background-color: cadetblue;
+    
+}
+
+
+
+.close{background-color: rgb(167, 8, 8);
+color: white;
+font-size: 40px;
+
+border-radius: 2px;
+position: absolute;
+top: 0;
+right: -200px;
+
+}
+.close:active{
+    background-color: brown;
+    
+}
+.close:hover{
+    background-color: brown;
+    cursor: pointer;
+}
+
+
+   a{
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    
+   }
+   a:hover{
+    color: white;
+   }
+   a:active{
+    color: white;
+   }
+
+   .nav a{
+    color: white;
+   }
