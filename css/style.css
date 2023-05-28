@@ -110,15 +110,14 @@ img{width: 100%;}
     display: grid;
     grid-template-areas: "satu dua"
                          "tiga dua";
-    grid-template-columns: 200px 400px;
-    grid-template-rows: 200px 200px ; 
+    grid-template-columns: 300px 400px;
+    grid-template-rows: 100px 300px ; 
 
     position: absolute;
     top: 20px;
-    left : 430px;
+    left : 200px;
     
     border-radius: 5px;
-    display: none;
 
 
     
@@ -129,7 +128,7 @@ img{width: 100%;}
 grid-area: "satu";
 display: grid;
 background-color: wheat;
-font-size: 20px;
+font-size: 13px;
 font-family: 'Times New Roman', Times, serif;
 place-content: center;
 border-radius: 20px;
@@ -142,13 +141,16 @@ border: 2px solid black;
 grid-area:"dua";
 height: 400px;
 display:grid;
-place-content: space-between start;
-font-size: 26px;;
-background-color: wheat;
+place-content: center start;
+font-size: 20px;;
+background-color: rgb(83, 54, 54);
 padding-left: 15px;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 border-radius: 10px;
 border-left: 2px solid black;
+letter-spacing: 0.1ch;
+font-family: 'Ubuntu', sans-serif;
+color:whitesmoke;
+
 
 
 }
@@ -156,11 +158,11 @@ border-left: 2px solid black;
     grid-area: "tiga";
     background-color: white;
     border: 2px solid black;
-    display: grid;
-    height: 200px;
+    height: 300px;
     display: grid;
     place-content: center;
     border-radius: 15px;
+    opacity: 0.9;
 
     
 }
@@ -174,7 +176,7 @@ font-size: 40px;
 border-radius: 2px;
 position: absolute;
 top: 1px;
-right: -199px;
+right: -310px;
 width: 50px;
 text-align: center;
 border-radius: 6px;
@@ -209,8 +211,8 @@ border-radius: 6px;
    }
 
    .tiga img{
-    width: 180px;
-    height: 200px;
+    width: 100%;
+    height: 300px;
     border-radius: 10px;
     border-left:px solid black ;
    }

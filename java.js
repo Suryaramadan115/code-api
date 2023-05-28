@@ -37,7 +37,7 @@ function search(){
         
        $('.container').html('')
         $.each(movie,function(i,data){
-        $('.container').html('<div class="con-content"><div class="gambar"><img src="'+data.Poster+'"></div><div class="content"><p><span class="nama">'+ data.Title+'</span></p><p><span class="title"></span></p><p> <span class="harga">'+data.Year+'</span></p><p><a href="#" class="modd">detail</a></p></div>')
+        $('.container').html('<div class="con-content"><div class="gambar"><img src="'+data.Poster+'"></div><div class="content"><p><span class="nama">'+ data.Title+'</span></p><p><span class="title"></span></p><p> <span class="harga">'+data.Year+'</span></p><p><a href="#" class="modd" data-id="'+ data.imdbID+'">detail</a></p></div>')
         
         
         
@@ -90,13 +90,49 @@ e.target.parentElement.style.display ="none";
 
 
 })
-
+function modlist(){
 container.addEventListener('click', function(e){
 if(e.target.className=="modd")
 conmodal.style.display="grid";
 
+})
+}
 
 
+$('.container').on('click','.modd', function(){
+
+$.ajax({
+
+url :'http://www.omdbapi.com',
+get :'get',
+dataType:'json',
+data :{
+    "apikey" : "4066cb5d",
+      "i"   : $(this).data('id')
+},
+success : function(hasil){
+
+    if(hasil.Response =="True"){
+        
+
+
+        $('.con-modal').html(`<div class="con-modal"><span class="close">x</span><div class="satu"><p><span><B>Name:</B>`+hasil.Title+`</span></p><p><span><b>Tahun</b>`+hasil.Year+`</span></p><p><span><B> Rate:</B>`+ hasil.Rated+`</span></p><p><span><DURATION:><b>duration : </b>`+hasil.Runtime+`</span></p></div><div class="dua"><p>  <span><b>direction:</b>`+hasil.Director+`</span> </p> <p>  <span><b>writer:</b>`+hasil.Writer+`</span> </p><p>  <span><b>Actor:</b>`+hasil.Actors+`</span> </p><p>  <span><b>Plot:</b>`+hasil.Plot+`</span> </p><>  <span><b>Award:</b> `+hasil.Awards+`</span>  </div><div class="tiga"><img src="`+hasil.Poster+`"></div></div>`)
+
+
+  
+
+
+
+
+    }
+
+}
+
+
+
+
+
+})
 
 
 })
